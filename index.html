@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResturantWebPage</title>
+    <style>
+        *{
+            margin : 0;
+            padding : 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: black;
+        }
+        .container{
+            overflow-x: hidden;
+            overflow-y: scroll;
+            position: sticky;
+            height : 100vh;
+            width : 100vw;
+            background: black;  
+            background: -webkit-linear-gradient(to right, black, black);  
+            background: linear-gradient(to right, black, black); 
+            border : 3px solid black;
+        }
+        .header{
+            display: flex;
+            justify-content: space-between;
+        }
+        .title{
+            margin : 20px;
+            width : 200px;
+            height : 60px;
+        }
+        .title p{
+            margin : 7px;
+            font-size: 25px;
+            text-shadow: 1px 1px 2px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .navBar{
+            margin : 16px;
+            margin-left : 180px;
+            width : 600px;
+            height : 60px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .navBar p{
+            text-shadow: 1px 1px 2px #fff;
+            font-size:16px;
+            color : white;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .otherThings{
+            width : 350px;
+            height : 60px;
+            margin : 16px;
+            display: flex;
+            justify-content: end;
+        }
+        .otherThings p{
+            text-shadow: 1px 1px 2px #fff;
+            padding:3px;
+            margin-top : 55px;
+            margin-top: 16px;
+            font-size: 16px;
+            color : white;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            margin-left: 30px;
+        }
+        .navBar p:hover{
+            cursor : pointer;
+            color : rgb(223, 150, 72)
+        }
+        .otherThings p:hover{
+            cursor : pointer;
+            color : rgb(223, 150, 72)
+        }
+
+        .mainContent{
+            width : 100vw;
+            height : 600px;
+            /* background-color: #fff; */
+            margin : 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .DescriptionContent{
+            width : 45%;
+            height : 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .ImageContent{
+            width: 55%;
+            height : 100%;
+            margin-left: 50px;
+            display: flex;
+            justify-content: start;
+            border : 1px solid black;
+        }
+        .ImageContent img{
+            margin-left: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgb(73, 72, 72), -5px -5px 10px rgb(73, 72, 72);
+        }
+
+        .DescriptionContent h1{
+            margin : 20px;
+            margin-left: 70px;
+            font-size : 100px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .DescriptionContent p{
+            margin : 20px;
+            margin-left: 70px;
+            font-size : 20px;
+            color:#fff;
+            font-family:cursive,italic;
+            font-weight: bolder;
+        }
+        .MenuStarters{
+            width : 100vw;
+            height : 1000px;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .MenuStarters h1{
+            
+            font-size : 70px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .starters{
+            box-sizing: border-box;
+            overflow: scroll;
+            margin-top : 70px;
+            margin:auto;
+            width : 80vw;
+            height : 90vh;
+            background: #000000;  
+            background: -webkit-linear-gradient(to right, #2c2b2b, #000000);  
+            background: linear-gradient(to right, #2a2929, #000000); 
+            box-shadow: 5px 5px 10px rgb(73, 72, 72), -5px -5px 10px rgb(73, 72, 72);
+            display: flex;
+            flex-direction: column;
+        }
+        .row1{
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .row2{
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .starter1{
+            box-shadow: 5px 5px 10px rgb(73, 72, 72), -5px -5px 10px rgb(73, 72, 72);
+            border : 1px solid black;
+            border-radius : 20px;
+            width : 300px;
+            height : 500px;
+            background: #000000;  
+            background: -webkit-linear-gradient(to right, #2c2b2b, #000000);  
+            background: linear-gradient(to right, #2a2929, #000000);
+            display: flex;
+            flex-direction: column;
+            align-items : center
+        }
+        .starter1 img{
+            border-radius : 19px;
+            width : 100%;
+            height : 60%;
+        }
+        .starter1 #NoodleTag{
+            margin-top : 5px;
+            font-size : 20px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .starter1 #descriptionNoodle{
+            margin : 10px;
+            font-size : 13px;
+            color:#fff;
+            font-family:cursive,italic;
+            font-weight: bolder;
+        }
+        .starter1 #NoodlePrice{
+            margin : 10px;
+            font-size : 20px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .starter2{
+            box-shadow: 5px 5px 10px rgb(73, 72, 72), -5px -5px 10px rgb(73, 72, 72);
+            border : 1px solid black;
+            border-radius : 20px;
+            width : 300px;
+            height : 500px;
+            background: #000000;  
+            background: -webkit-linear-gradient(to right, #2c2b2b, #000000);  
+            background: linear-gradient(to right, #2a2929, #000000);
+            display: flex;
+            flex-direction: column;
+            align-items : center
+        }
+        .starter2 img{
+            border-radius : 19px;
+            width : 100%;
+            height : 60%;
+        }
+        .starter2 #BurgerTag{
+            margin-top : 5px;
+            font-size : 20px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .starter2 #descriptionBurger{
+            margin : 10px;
+            font-size : 13px;
+            color:#fff;
+            font-family:cursive,italic;
+            font-weight: bolder;
+        }
+        
+        .starter2 #BurgerPrice{
+            margin : 10px;
+            font-size : 20px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .starter3{
+            box-shadow: 5px 5px 10px rgb(73, 72, 72), -5px -5px 10px rgb(73, 72, 72);
+            border : 1px solid black;
+            border-radius : 20px;
+            width : 300px;
+            height : 500px;
+            background: #000000;  
+            background: -webkit-linear-gradient(to right, #2c2b2b, #000000);  
+            background: linear-gradient(to right, #2a2929, #000000);
+            display: flex;
+            flex-direction: column;
+            align-items : center
+        }
+        .starter3 img{
+            border-radius : 19px;
+            width : 100%;
+            height : 60%;
+        }
+        .starter3 #PizzaTag{
+            margin-top : 5px;
+            font-size : 20px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .starter3 #descriptionPizza{
+            margin : 10px;
+            font-size : 13px;
+            color:#fff;
+            font-family:cursive,italic;
+            font-weight: bolder;
+        }
+        
+        .starter3 #PizzaPrice{
+            margin : 10px;
+            font-size : 20px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .starter4{
+            box-shadow: 5px 5px 10px rgb(73, 72, 72), -5px -5px 10px rgb(73, 72, 72);
+            border : 1px solid black;
+            border-radius : 20px;
+            width : 300px;
+            height : 500px;
+            background: #000000;  
+            background: -webkit-linear-gradient(to right, #2c2b2b, #000000);  
+            background: linear-gradient(to right, #2a2929, #000000);
+            display: flex;
+            flex-direction: column;
+            align-items : center
+        }
+        .starter4 img{
+            border-radius : 19px;
+            width : 100%;
+            height : 60%;
+        }
+        .starter4 #HotdogTag{
+            margin-top : 5px;
+            font-size : 20px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .starter4 #descriptionHotdog{
+            margin : 10px;
+            font-size : 13px;
+            color:#fff;
+            font-family:cursive,italic;
+            font-weight: bolder;
+        }
+        
+        .starter4 #HotdogPrice{
+            margin : 10px;
+            font-size : 20px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .starter5{
+            box-shadow: 5px 5px 10px rgb(73, 72, 72), -5px -5px 10px rgb(73, 72, 72);
+            border : 1px solid black;
+            border-radius : 20px;
+            width : 300px;
+            height : 500px;
+            background: #000000;  
+            background: -webkit-linear-gradient(to right, #2c2b2b, #000000);  
+            background: linear-gradient(to right, #2a2929, #000000);
+            display: flex;
+            flex-direction: column;
+            align-items : center
+        }
+        .starter5 img{
+            border-radius : 19px;
+            width : 100%;
+            height : 60%;
+        }
+        .starter5 #ChickenrollTag{
+            margin-top : 5px;
+            font-size : 20px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .starter5 #descriptionChickenroll{
+            margin : 10px;
+            font-size : 13px;
+            color:#fff;
+            font-family:cursive,italic;
+            font-weight: bolder;
+        }
+        
+        .starter5 #RollPrice{
+            margin : 10px;
+            font-size : 20px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .starter6{
+            box-shadow: 5px 5px 10px rgb(73, 72, 72), -5px -5px 10px rgb(73, 72, 72);
+            border : 1px solid black;
+            border-radius : 20px;
+            width : 300px;
+            height : 500px;
+            background: #000000;  
+            background: -webkit-linear-gradient(to right, #2c2b2b, #000000);  
+            background: linear-gradient(to right, #2a2929, #000000);
+            display: flex;
+            flex-direction: column;
+            align-items : center
+        }
+        .starter6 img{
+            border-radius : 19px;
+            width : 100%;
+            height : 60%;
+        }
+        .starter6 #ComboTag{
+            margin-top : 5px;
+            font-size : 20px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .starter6 #descriptionCombo{
+            margin : 10px;
+            font-size : 13px;
+            color:#fff;
+            font-family:cursive,italic;
+            font-weight: bolder;
+        }
+        
+        .starter6 #ComboPrice{
+            margin : 10px;
+            font-size : 20px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .MainCourseFood{
+            width : 100vw;
+            height : 1000px;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .MainCourseFood h1{
+            margin-top: 50px;
+            font-size : 70px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .mainCourse{
+            box-sizing: border-box;
+            overflow: scroll;
+            margin-top : 70px;
+            margin:auto;
+            width : 80vw;
+            height : 90vh;
+            background: #000000;  
+            background: -webkit-linear-gradient(to right, #2c2b2b, #000000);  
+            background: linear-gradient(to right, #2a2929, #000000); 
+            box-shadow: 5px 5px 10px rgb(73, 72, 72), -5px -5px 10px rgb(73, 72, 72);
+            display: flex;
+            flex-direction: column;
+        }
+        .food1{
+            box-shadow: 5px 5px 10px rgb(73, 72, 72), -5px -5px 10px rgb(73, 72, 72);
+            border : 1px solid black;
+            border-radius : 20px;
+            width : 300px;
+            height : 500px;
+            background: #000000;  
+            background: -webkit-linear-gradient(to right, #2c2b2b, #000000);  
+            background: linear-gradient(to right, #2a2929, #000000);
+            display: flex;
+            flex-direction: column;
+            align-items : center
+        }
+        .food1 img{
+            border-radius : 19px;
+            width : 100%;
+            height : 60%;
+        }
+        .food1 #PannerTikkaTag{
+            margin-top : 5px;
+            font-size : 20px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .food1 #descriptionPannerTikka{
+            margin : 10px;
+            font-size : 13px;
+            color:#fff;
+            font-family:cursive,italic;
+            font-weight: bolder;
+        }
+        
+        .food1 #PannerTikkaPrice{
+            margin : 10px;
+            font-size : 20px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .food2{
+            box-shadow: 5px 5px 10px rgb(73, 72, 72), -5px -5px 10px rgb(73, 72, 72);
+            border : 1px solid black;
+            border-radius : 20px;
+            width : 300px;
+            height : 500px;
+            background: #000000;  
+            background: -webkit-linear-gradient(to right, #2c2b2b, #000000);  
+            background: linear-gradient(to right, #2a2929, #000000);
+            display: flex;
+            flex-direction: column;
+            align-items : center
+        }
+        .food2 img{
+            border-radius : 19px;
+            width : 100%;
+            height : 60%;
+        }
+        .food2 #ChickenBiryaniTag{
+            margin-top : 5px;
+            font-size : 20px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .food2 #descriptionChickenBiryani{
+            margin : 10px;
+            font-size : 13px;
+            color:#fff;
+            font-family:cursive,italic;
+            font-weight: bolder;
+        }
+        
+        .food2 #ChickenBiryaniPrice{
+            margin : 10px;
+            font-size : 20px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .food3{
+            box-shadow: 5px 5px 10px rgb(73, 72, 72), -5px -5px 10px rgb(73, 72, 72);
+            border : 1px solid black;
+            border-radius : 20px;
+            width : 300px;
+            height : 500px;
+            background: #000000;  
+            background: -webkit-linear-gradient(to right, #2c2b2b, #000000); 
+            background: linear-gradient(to right, #2a2929, #000000);
+            display: flex;
+            flex-direction: column;
+            align-items : center
+        }
+        .food3 img{
+            border-radius : 19px;
+            width : 100%;
+            height : 60%;
+        }
+        .food3 #MalaiChappTag{
+            margin-top : 5px;
+            font-size : 20px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .food3 #descriptionMalaiChapp{
+            margin : 10px;
+            font-size : 13px;
+            color:#fff;
+            font-family:cursive,italic;
+            font-weight: bolder;
+        }
+        
+        .food3 #MalaiChappPrice{
+            margin : 10px;
+            font-size : 20px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .food4{
+            box-shadow: 5px 5px 10px rgb(73, 72, 72), -5px -5px 10px rgb(73, 72, 72);
+            border : 1px solid black;
+            border-radius : 20px;
+            width : 300px;
+            height : 500px;
+            background: #000000;  
+            background: -webkit-linear-gradient(to right, #2c2b2b, #000000); 
+            background: linear-gradient(to right, #2a2929, #000000);
+            display: flex;
+            flex-direction: column;
+            align-items : center
+        }
+        .food4 img{
+            border-radius : 19px;
+            width : 100%;
+            height : 60%;
+        }
+        .food4 #TandooriPannerTag{
+            margin-top : 5px;
+            font-size : 20px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .food4 #descriptionTandooriPanner{
+            margin : 10px;
+            font-size : 13px;
+            color:#fff;
+            font-family:cursive,italic;
+            font-weight: bolder;
+        }
+        
+        .food4 #TandooriPannerPrice{
+            margin : 10px;
+            font-size : 20px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .food5{
+            box-shadow: 5px 5px 10px rgb(73, 72, 72), -5px -5px 10px rgb(73, 72, 72);
+            border : 1px solid black;
+            border-radius : 20px;
+            width : 300px;
+            height : 500px;
+            background: #000000; 
+            background: -webkit-linear-gradient(to right, #2c2b2b, #000000); 
+            background: linear-gradient(to right, #2a2929, #000000);
+            display: flex;
+            flex-direction: column;
+            align-items : center
+        }
+        .food5 img{
+            border-radius : 19px;
+            width : 100%;
+            height : 60%;
+        }
+        .food5 #ChilliPannerKFCTag{
+            margin-top : 5px;
+            font-size : 20px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .food5 #descriptionChilliPannerKFC{
+            margin : 10px;
+            font-size : 13px;
+            color:#fff;
+            font-family:cursive,italic;
+            font-weight: bolder;
+        }
+        
+        .food5 #ChilliPannerKFCPrice{
+            margin : 10px;
+            margin-top:45px;
+            font-size : 20px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .food6{
+            box-shadow: 5px 5px 10px rgb(73, 72, 72), -5px -5px 10px rgb(73, 72, 72);
+            border : 1px solid black;
+            border-radius : 20px;
+            width : 300px;
+            height : 500px;
+            background: #000000;  
+            background: -webkit-linear-gradient(to right, #2c2b2b, #000000);  
+            background: linear-gradient(to right, #2a2929, #000000);
+            display: flex;
+            flex-direction: column;
+            align-items : center
+        }
+        .food6 img{
+            border-radius : 19px;
+            width : 100%;
+            height : 60%;
+        }
+        .food6 #VegThaaliTag{
+            margin-top : 5px;
+            font-size : 20px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        .food6 #descriptionVegThaali{
+            margin : 10px;
+            font-size : 13px;
+            color:#fff;
+            font-family:cursive,italic;
+            font-weight: bolder;
+        }
+        
+        .food6 #VegThaaliPrice{
+            margin : 10px;
+            margin-top:45px;
+            font-size : 20px;
+            text-shadow: 5px 5px 10px #fff;
+            color:white;
+            font-family:poppins,cursive;
+            font-weight: bolder;
+        }
+        
+        /* Extra small devices (phones, 0 - 480px) */
+@media only screen and (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navBar, .otherThings {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin: 0;
+    }
+    .navBar p, .otherThings p {
+        margin: 8px 0;
+        font-size: 16px;
+    }
+    .mainContent {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        margin: 10px 0;
+    }
+    .DescriptionContent {
+        width: 100%;
+        align-items: center;
+    }
+    .DescriptionContent h1 {
+        font-size: 38px;
+        margin-left: 0;
+        text-align: center;
+    }
+    .DescriptionContent p {
+        font-size: 16px;
+        margin-left: 0;
+        text-align: center;
+    }
+    .ImageContent {
+        width: 100%;
+        margin: 0;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .ImageContent img {
+        width: 90vw;
+        margin: 10px auto;
+        display: block;
+    }
+    .MenuStarters h1,
+    .MainCourseFood h1 {
+        font-size: 36px;
+        text-align: center;
+    }
+    .starters, .mainCourse {
+        width: 100vw;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        overflow-x: auto;
+    }
+    .row1, .row2 {
+        flex-direction: column;
+        align-items: center;
+    }
+    .starter1, .starter2, .starter3, .starter4, .starter5, .starter6,
+    .food1, .food2, .food3, .food4, .food5, .food6 {
+        width: 90vw;
+        height: auto;
+        margin-bottom: 20px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 481px - 767px) */
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navBar, .otherThings {
+        width: 100%;
+        margin: 0;
+        justify-content: flex-start;
+    }
+    .navBar p, .otherThings p {
+        font-size: 18px;
+        margin: 8px 0;
+    }
+    .mainContent {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+    .DescriptionContent {
+        width: 100%;
+        align-items: center;
+    }
+    .DescriptionContent h1 {
+        font-size: 50px;
+        margin-left: 0;
+        text-align: center;
+    }
+    .DescriptionContent p {
+        font-size: 18px;
+        margin-left: 0;
+        text-align: center;
+    }
+    .ImageContent {
+        width: 100%;
+        margin: 0;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .ImageContent img {
+        width: 80vw;
+        margin: 10px auto;
+        display: block;
+    }
+    .MenuStarters h1,
+    .MainCourseFood h1 {
+        font-size: 48px;
+        text-align: center;
+    }
+    .starters, .mainCourse {
+        width: 100vw;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        overflow-x: auto;
+    }
+    .row1, .row2 {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .starter1, .starter2, .starter3, .starter4, .starter5, .starter6,
+    .food1, .food2, .food3, .food4, .food5, .food6 {
+        width: 45vw;
+        height: auto;
+        margin: 10px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px - 1024px) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .header {
+        flex-direction: row;
+        align-items: center;
+    }
+    .navBar, .otherThings {
+        width: auto;
+        margin: 0 10px;
+    }
+    .mainContent {
+        flex-direction: row;
+        align-items: flex-start;
+        height: auto;
+    }
+    .DescriptionContent {
+        width: 60%;
+        align-items: flex-start;
+    }
+    .DescriptionContent h1 {
+        font-size: 60px;
+        margin-left: 20px;
+        text-align: left;
+    }
+    .DescriptionContent p {
+        font-size: 20px;
+        margin-left: 20px;
+        text-align: left;
+    }
+    .ImageContent {
+        width: 40%;
+        margin-left: 0;
+        justify-content: center;
+    }
+    .ImageContent img {
+        width: 35vw;
+        margin: 10px;
+    }
+    .MenuStarters h1,
+    .MainCourseFood h1 {
+        font-size: 56px;
+        text-align: center;
+    }
+    .starters, .mainCourse {
+        width: 100vw;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        overflow-x: auto;
+    }
+    .row1, .row2 {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .starter1, .starter2, .starter3, .starter4, .starter5, .starter6,
+    .food1, .food2, .food3, .food4, .food5, .food6 {
+        width: 30vw;
+        height: auto;
+        margin: 10px;
+    }
+    /* Hamburger icon styles */
+}
+/* Hamburger icon styles */
+.menu-toggle {
+  display: none;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  margin: 18px 16px 18px 0;
+  z-index: 1001;
+}
+.hamburger span {
+  height: 4px;
+  width: 30px;
+  background: white;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+/* Responsive styles for navbar and hamburger */
+@media (max-width: 800px) {
+  .navBar {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100vw;
+    background: #111;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    z-index: 1000;
+  }
+  .navBar p {
+    margin: 18px 0;
+    font-size: 22px;
+  }
+  .menu-toggle:checked + .hamburger + .navBar {
+    display: flex;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .otherThings {
+    display: none;
+  }
+  /* Hide right images on small screens */
+  .ImageContent img {
+    display: none;
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">
+                <p>Apni Rasoi</p>
+            </div>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle"/>
+            <label for="menu-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+            </label>
+        <nav class="navBar">
+        <p>HOME</p>
+        <p>MENU</p>
+        <p>ABOUT</p>
+        <p>BOOK TABLE</p>
+        </nav>
+        <div class="otherThings">
+        <p id="LoginButton">LogIn</p>
+        <p id="SignUpButton">SignUp</p>
+        </div>
+    </div>
+
+        <div class="mainContent">
+            <div class="DescriptionContent">
+                <h1>Apni Rasoi</h1>
+                <p>
+                    Apni Rasoi Restaurant offers a delightful blend of authentic Indian flavors and warm hospitality. Known for its delicious food, cozy ambiance, and quick service, it’s the perfect spot for family dinners or casual outings. Every dish is prepared with fresh ingredients and a touch of homemade love.
+                </p>
+            </div>
+            <div class="ImageContent">
+                <img src="FoodImage.jpg" alt="" id="Image1Right">
+                <img src="PizzaImage.jpg" alt="PizzaImage.jpg" id="Image2Right">
+            </div>
+        </div>
+
+        <div class="MenuStarters">
+            <h1>Starters</h1>
+            <div class="starters">
+                <div class="row1">
+                    <div class="starter1">
+                        <img src="noodles.jpg" alt="Noodles.jpg">
+                        <p id="NoodleTag">Veg Noodles</p>
+                        <p id="descriptionNoodle">Savor the perfect bowl of our signature noodles — tossed with fresh vegetables, bold spices, and your choice of sauces. A mouthwatering fusion of flavor and texture, cooked to perfection for every noodle lover.</p>
+                        <p id="NoodlePrice">Price $7</p>
+                    </div>
+                    <div class="starter2">
+                        <img src="BurgerMaharaja.jpg" alt="BurgerMaharaja.jpg">
+                        <p id="BurgerTag">Maharaja Burger</p>
+                        <p id="descriptionBurger">Indulge in our royal Maharaja Burger — a towering delight packed with a juicy patty, layers of melted cheese, fresh lettuce, tomatoes, and our special spicy mayo. Every bite is a burst of bold flavors fit for a king!</p>
+                        <p id="BurgerPrice">Price $5</p>
+                    </div>
+                    <div class="starter3">
+                        <img src="PizzaImageStarter.jpg" alt="PizzaImageStarter.jpg">   
+                        <p id="PizzaTag">Capsicum and Onion Pizza</p>
+                        <p id="descriptionPizza">Enjoy the classic taste of our Capsicum & Onion Pizza — a flavorful combination of fresh, crunchy capsicum and sweet onions layered over rich tomato sauce and melted mozzarella. A simple yet satisfying favorite for every pizza lover!</p>
+                        <p id="PizzaPrice">Price $6.5</p>
+                    </div>
+                </div>
+               <div class="row2">
+                <div class="starter4">
+                    <img src="Hotdog.jpg" alt="Hotdog.jpg">
+                    <p id="HotdogTag">HotDog</p>
+                    <p id="descriptionHotdog">Sink your teeth into our delicious Hotdog — a soft, toasted bun filled with a juicy sausage, drizzled with tangy mustard, ketchup, and topped with crunchy onions. A perfect snack that's quick, satisfying, and packed with flavor!</p>
+                    <p id="HotdogPrice">Price $3.5</p>
+                </div>
+                <div class="starter5">
+                    <img src="ChickenRole.jpg" alt="ChickenRole.jpg">
+                    <p id="ChickenrollTag">Chicken Roll</p>
+                    <p id="descriptionChickenroll">Treat yourself to our flavorful Chicken Roll — tender, spicy chicken wrapped in a soft, buttery paratha, layered with fresh veggies and zesty sauces. A perfect blend of spice and crunch that makes every bite unforgettable!</p>
+                    <p id="RollPrice">price $5.00</p>
+                </div>
+                <div class="starter6">
+                    <img src="Combo.jpg" alt="Combo.jpg">
+                    <p id="ComboTag">Best-Combo</p>
+                    <p id="descriptionCombo">Experience the ultimate feast with our Best Combo — a delightful mix of our signature dishes, including crispy fries, a refreshing drink, and your choice of a burger or wrap. Perfect for sharing
+                    <p id="ComboPrice">Price $4.5</p>
+                </div>
+               </div>
+            </div>
+        </div>
+
+        <div class="MainCourseFood">
+            <h1>Main Course</h1>
+            <div class="mainCourse">
+                <div class="row1">
+                    <div class="food1">
+                        <img src="PannerTikkaImage.jpg" alt="PannerTikkaImage.jpg">
+                        <p id="PannerTikkaTag">spl. Malai Tikka</p>
+                        <p id="descriptionPannerTikka">Indulge in our Special Malai Tikka — tender chunks of marinated chicken grilled to perfection in creamy malai, infused with aromatic spices and a hint of smokiness. A melt-in-your-mouth delicacy that's rich, flavorful, and irresistibly creamy.</p>
+                        <p id="PannerTikkaPrice">Price $7.5</p>
+                    </div>
+                    <div class="food2">
+                        <img src="ChickenBiryaniImage.jpg" alt="ChickenBiryaniImage.jpg">
+                        <p id="ChickenBiryaniTag">Chicken Biryani</p>
+                        <p id="descriptionChickenBiryani">Savor the rich flavors of our Chicken Biryani — fragrant basmati rice layered with tender chicken, aromatic spices, and saffron. A royal dish that brings together the perfect balance of spices and textures in every bite.</p>
+                        <p id="ChickenBiryaniPrice">Price $8.00</p>
+                    </div>
+                    <div class="food3">
+                        <img src="MalaiChappImage.jpg" alt="MalaiChappImage.jpg">
+                        <p id="MalaiChappTag">Malai Chapp</p>
+                        <p id="descriptionMalaiChapp">Delight in our Malai Chapp — succulent pieces of chicken marinated in a creamy blend of spices, grilled to perfection. Each bite is a burst of flavor, making it a must-try for all chicken lovers!</p>
+                        <p id="MalaiChappPrice">Price $6.5</p>
+                    </div>
+                </div>
+               <div class="row2">
+                <div class="food4">
+                    <img src="TandooriPannerImage.jpg" alt="TandooriPannerImage.jpg">
+                    <p id="TandooriPannerTag">Tandoori Panner</p>   
+                    <p id="descriptionTandooriPanner">Savor the smoky goodness of our Tandoori Paneer — marinated paneer cubes grilled to perfection in a traditional tandoor, infused with spices and served with tangy mint chutney. A delightful vegetarian dish that's bursting with flavor!</p>
+                    <p id="TandooriPannerPrice">Price $5.5</p>
+                </div>
+                <div class="food5">
+                    <img src="ChilliPannerKFC.jpg" alt="ChilliPannerKFC.jpg">
+                    <p id="ChilliPannerKFCTag">Chilli Panner</p>
+                    <p id="descriptionChilliPannerKFC">TCrispy fried paneer tossed in a spicy Indo-Chinese sauce with peppers and garlic. A fiery fusion of crunch and flavor in every bite!</p>
+                    <p id="ChilliPannerKFCPrice">price $8.00</p>
+                </div>
+                <div class="food6">
+                    <img src="VegThaali.jpg" alt="VegThaali.jpg">
+                    <p id="VegThaaliTag">Veg Thaali</p>
+                    <p id="descriptionVegThaali">Indulge in our Veg Thaali — a delightful platter featuring a variety of traditional Indian dishes, including fragrant rice, flavorful curries, fresh salad, and crispy papad. A wholesome meal that offers a taste of India in every bite!</p>
+                    <p id="VegThaaliPrice">Price $9.5</p>
+                </div>
+               </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
